@@ -1,15 +1,16 @@
 package com.hspark.menu;
 
+import java.util.Iterator;
 import java.util.List;
 
-import com.hspark.menu.iterator.Iterator;
+import com.hspark.menu.iterator.Menu;
 import com.hspark.menu.iterator.PancakeHouseIterator;
 
 public class PancakeHouseMenu {
     List<MenuItem> menuItems;
 
-    public Iterator createIterator() {
-        return new PancakeHouseIterator(menuItems);
+    public Menu createIterator() {
+        return (Menu) new PancakeHouseIterator(menuItems);
     }
     
     public void addItem(String name, String desc, boolean vegetarian, double price) {

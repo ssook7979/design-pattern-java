@@ -1,7 +1,9 @@
 package com.hspark.menu;
 
+import java.util.Iterator;
+
 import com.hspark.menu.iterator.DinerMenuIterator;
-import com.hspark.menu.iterator.Iterator;
+import com.hspark.menu.iterator.Menu;
 
 import lombok.Data;
 
@@ -14,8 +16,8 @@ public class DinerMenu {
     
     private MenuItem[] menuItems;
 
-    public Iterator createIterator() {
-        return new DinerMenuIterator(getMenuItems());
+    public Menu createIterator() {
+        return (Menu) new DinerMenuIterator(getMenuItems());
     }
 
     public void addItem(String name, String desc, boolean vegetarian, double price) {

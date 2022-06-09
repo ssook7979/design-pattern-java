@@ -1,6 +1,8 @@
 package com.hspark.menu;
 
-import com.hspark.menu.iterator.Iterator;
+import java.util.Iterator;
+
+import com.hspark.menu.iterator.Menu;
 
 public class Waitress {
     
@@ -9,8 +11,8 @@ public class Waitress {
     DinerMenu dm = new DinerMenu();
 
     public void printMenu() {
-        Iterator phmIterator = phm.createIterator();
-        Iterator dmIterator = dm.createIterator();
+        Menu phmIterator = phm.createIterator();
+        Menu dmIterator = dm.createIterator();
 
         printMenu(phmIterator);
         printMenu(dmIterator);
@@ -18,19 +20,19 @@ public class Waitress {
     }
 
     // iterator 사용하여 반복되는 구문 제거
-    public void printMenu(Iterator iterator) {
+    public void printMenu(Menu iterator) {
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
     }
 
     public void printBreakfast() {
-        Iterator phmIterator = phm.createIterator();
+        Menu phmIterator = phm.createIterator();
         printMenu(phmIterator);
     }
 
     public void printLunchMenu() {
-        Iterator dmIterator = dm.createIterator();
+        Menu dmIterator = dm.createIterator();
         printMenu(dmIterator);
     }
 
