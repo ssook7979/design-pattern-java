@@ -20,14 +20,14 @@ public class Waitress {
     }
 
     // iterator 사용하여 반복되는 구문 제거
-    public void printMenu(Menu iterator) {
+    public void printMenu(Iterator iterator) {
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
     }
 
     public void printBreakfast() {
-        Menu phmIterator = phm.createIterator();
+        Iterator phmIterator = phm.createIterator();
         printMenu(phmIterator);
     }
 
