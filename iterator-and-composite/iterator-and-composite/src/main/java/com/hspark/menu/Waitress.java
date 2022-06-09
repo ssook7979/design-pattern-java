@@ -2,8 +2,6 @@ package com.hspark.menu;
 
 import java.util.Iterator;
 
-import com.hspark.menu.iterator.Menu;
-
 public class Waitress {
     
     PancakeHouseMenu phm = new PancakeHouseMenu();
@@ -11,8 +9,8 @@ public class Waitress {
     DinerMenu dm = new DinerMenu();
 
     public void printMenu() {
-        Menu phmIterator = phm.createIterator();
-        Menu dmIterator = dm.createIterator();
+        Iterator phmIterator = phm.createIterator();
+        Iterator dmIterator = dm.createIterator();
 
         printMenu(phmIterator);
         printMenu(dmIterator);
@@ -32,7 +30,7 @@ public class Waitress {
     }
 
     public void printLunchMenu() {
-        Menu dmIterator = dm.createIterator();
+        Iterator dmIterator = dm.createIterator();
         printMenu(dmIterator);
     }
 
