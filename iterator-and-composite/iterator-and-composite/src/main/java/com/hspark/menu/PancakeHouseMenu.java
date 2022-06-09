@@ -1,6 +1,6 @@
 package com.hspark.menu;
 
-import java.util.ArrayList;
+
 
 public class PancakeHouseMenu {
     ArrayList<MenuItem> menuItems;
@@ -9,7 +9,7 @@ public class PancakeHouseMenu {
         menuItems.add(new MenuItem(name, desc, vegetarian, price));
     }
 
-    public ArrayList<MenuItem> getMenuItems() {
+    public List<MenuItem> getMenuItems() {
         return menuItems;
     }
 }
