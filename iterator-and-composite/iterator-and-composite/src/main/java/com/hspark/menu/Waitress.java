@@ -1,6 +1,6 @@
 package com.hspark.menu;
 
-import java.util.ArrayList;
+import com.hspark.menu.iterator.Iterator;
 
 public class Waitress {
     
@@ -9,26 +9,29 @@ public class Waitress {
     DinerMenu dm = new DinerMenu();
 
     public void printMenu() {
-        printBreakfast();
-        printLunchMenu();
+        Iterator phmIterator = phm.createIterator();
+        Iterator dmIterator = dm.createIterator();
+
+        printMenu(phmIterator);
+        printMenu(dmIterator);
+
     }
 
-    // 반복되는 코드
+    // iterator 사용하여 반복되는 구문 제거
+    public void printMenu(Iterator iterator) {
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
+
     public void printBreakfast() {
-        ArrayList<MenuItem> menuItems = phm.menuItems;
-        for (int i = 0; i < menuItems.size(); i++) {
-            MenuItem item = menuItems.get(i);
-            System.out.println(item);
-        }
+        Iterator phmIterator = phm.createIterator();
+        printMenu(phmIterator);
     }
 
-    // 반복되는 코드
     public void printLunchMenu() {
-        MenuItem[] menuItems = dm.getMenuItems();
-        for (int i = 0; i < menuItems.length; i++) {
-            MenuItem item = menuItems[i];
-            System.out.println(item);            
-        }
+        Iterator dmIterator = dm.createIterator();
+        printMenu(dmIterator);
     }
 
     public boolean isItemVegetarian(String name) {
