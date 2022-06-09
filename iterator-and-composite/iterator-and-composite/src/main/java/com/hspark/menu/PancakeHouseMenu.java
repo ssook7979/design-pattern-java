@@ -9,14 +9,10 @@ public class PancakeHouseMenu {
     List<MenuItem> menuItems;
 
     public Iterator createIterator() {
-        return new PancakeHouseIterator(getMenuItems());
+        return new PancakeHouseIterator(menuItems);
     }
     
     public void addItem(String name, String desc, boolean vegetarian, double price) {
         menuItems.add(new MenuItem(name, desc, vegetarian, price));
-    }
-
-    public List<MenuItem> getMenuItems() {
-        return menuItems;
     }
 }
