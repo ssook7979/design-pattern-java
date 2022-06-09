@@ -10,7 +10,7 @@ public class PancakeHouseIterator implements Iterator {
 
     private int position = 0;
 
-    PancakeHouseIterator(List<MenuItem> items) {
+    public PancakeHouseIterator(List<MenuItem> items) {
         this.items = items;
     }
 
